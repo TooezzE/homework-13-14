@@ -9,5 +9,10 @@ public class MyFirstClass {
         book1.setPublicationYear(2455);
         System.out.println(book1.getBookTitle() + " " + book1.getPublicationYear() + " год, (not real)");
         System.out.println(book2.getBookTitle() + " " + book2.getPublicationYear() + " год");
+        book1.setPublicationYear(1863);
+        System.out.println(levTolstoi);
+        System.out.println(gogol);
+        System.out.println(book1);
+        System.out.println(book2);
     }
 }
