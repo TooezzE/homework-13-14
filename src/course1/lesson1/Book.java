@@ -1,8 +1,10 @@
 package course1.lesson1;
 
+import java.util.Objects;
+
 public class Book {
-    private String bookTitle;
-    private Author author;
+    private final String bookTitle;
+    private final Author author;
     private int publicationYear;
 
     public Book(String bookTitle, Author author, int publicationYear){
@@ -22,5 +24,26 @@ public class Book {
     }
     public void setPublicationYear(int year){
         this.publicationYear = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Книга: " +
+                "\'"+ bookTitle + '\'' +
+                ", " + author +
+                ", год публикации: " + publicationYear;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publicationYear == book.publicationYear && bookTitle.equals(book.bookTitle) && author.equals(book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookTitle, author, publicationYear);
     }
 }
